@@ -7,8 +7,9 @@ public class Calculator {
 		return returnValue;
 	
 	else
-	{   
-		String[] arr=numbers.split(",");
+	{
+		
+		String[] arr=numbers.split(",|\n");
 		for(String arr1:arr)
 			returnValue+=Integer.parseInt(arr1);
 		

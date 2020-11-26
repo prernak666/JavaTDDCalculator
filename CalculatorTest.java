@@ -22,4 +22,8 @@ public class CalculatorTest {
     public void ReturnSumOfUnknownNumbersDelimitedByComma() {
     	assertEquals(6,Calculator.add("1,2,3"));
     }
+    @Test
+    public void ReturnSumOfUnknownNumbersDelimited() {
+    	assertEquals(6,Calculator.add("1,2\n3"));
+    }
 }
