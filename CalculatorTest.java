@@ -26,4 +26,8 @@ public class CalculatorTest {
     public void ReturnSumOfUnknownNumbersDelimited() {
     	assertEquals(6,Calculator.add("1,2\n3"));
     }
+    @Test
+    public void ReturnSumwithMultipleNumberOfDelimited() {
+    	assertEquals(3,Calculator.add("//;\\n1;2"));
+    }
 }
