@@ -1,5 +1,6 @@
 package calculatorJava;
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -30,4 +31,16 @@ public class CalculatorTest {
     public void ReturnSumwithMultipleNumberOfDelimited() {
     	assertEquals(3,Calculator.add("//;\\n1;2"));
     }
+    @Test
+    void ReturnEXceptionOnNegative() {
+    	
+    	Exception exception = assertThrows(RuntimeException.class, () -> {
+            Calculator.add("1,-2");
+        });
+     
+        String expectedMessage = "-2";
+        String actualMessage = exception.getMessage();
+     
+        assertTrue(actualMessage.contains(expectedMessage));
+    } 
 }
