@@ -1,6 +1,6 @@
 package calculatorJava;
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -35,12 +35,11 @@ public class CalculatorTest {
     void ReturnEXceptionOnNegative() {
     	
     	Exception exception = assertThrows(RuntimeException.class, () -> {
-            Calculator.add("1,-2");
+            Calculator.add("1,-2,-3,9,-4");
         });
      
-        String expectedMessage = "-2";
-        String actualMessage = exception.getMessage();
+        
      
-        assertTrue(actualMessage.contains(expectedMessage));
+        assertEquals("Negatives not allowed: [-2, -3, -4]",exception.getMessage());
     } 
 }
